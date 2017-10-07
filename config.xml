@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Ashesi</name>
+    <description>My First Apache Cordova application at Ashesi</description>
+    <author email="snwolley@gmail.com" href="http://npontu.com">Stephane Nwolley</author>
+
+    <content src="index.html"></content>
+    <access origin="*"></access>
+</widget>
