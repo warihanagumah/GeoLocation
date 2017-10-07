@@ -6,4 +6,6 @@
 
     <content src="index.html"></content>
     <access origin="*"></access>
+
+    <plugin name="cordova-plugin-geolocation" />
 </widget>
