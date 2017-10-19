@@ -8,27 +8,42 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //We decide to create a function to handle the 3rd party functions (eg. navigator.geolocation.getCurrentPosition)
 // which we earlier added to the native functions of the javascript
 function onDeviceReady() {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    document.getElementById("geolocation").addEventListener("click", callFunctions);
 }
 
-// onSuccess Geolocation
-//
+// onSuccess get latiude and longitude
+//Display it on a map
 function onSuccess(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
 
-    var element = document.getElementById('geolocation');
-    element.innerHTML = 'Latitude: ' + position.coords.latitude  + '<br />' +
-        'Longitude: '          + position.coords.longitude             + '<br />' +
-        'Altitude: '           + position.coords.altitude              + '<br />' +
-        'Accuracy: '           + position.coords.accuracy              + '<br />' +
-        'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-        'Heading: '            + position.coords.heading               + '<br />' +
-        'Speed: '              + position.coords.speed                 + '<br />' +
-        'Timestamp: '          + position.timestamp          + '<br />';
+    //alert(longitude);
+
+    var latLng = new google.maps.LatLng(latitude, longitude);
+
+     var mapOptions = {
+        center:latLng, 
+        zoom:12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };        
+
+    var map = new google.maps.Map(document.getElementById("myMap"), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        title: "I am here"
+
+    });
+
 }
 
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-        'message: ' + error.message + '\n');
+    alert('Please turn on your location' + '\n');
+}
+
+function callFunctions(){
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }

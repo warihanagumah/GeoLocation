@@ -8,7 +8,36 @@
 
   <link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
   <link rel="stylesheet" href="css/jquery.mobile.theme.css" />
-  
+
+  <style>
+    #myMap{
+      height:80vh;
+      width:100%;
+      background: #F0FFF0;
+
+    }
+    .container{
+      width: 100%;
+      margin: 0px;
+    }
+    .myHeader{
+      width: 100%;
+      background: #6B8E23;
+      color: #fff;
+      font-size: 14px;
+      padding: 2%;
+      margin-bottom: 1%;
+      text-align: center;
+    }
+
+    #geolocation{
+      background: #6B8E23;
+      color: #fff;
+      padding: 2%;
+      margin-bottom: 2%;
+    }
+
+  </style>
   <script>
     var userAgent = navigator.userAgent + '';
     if (userAgent.indexOf('iPhone') > -1) {
@@ -26,27 +55,26 @@
   <!-- your scripts here -->
   <script src="js/app/app.js"></script>
   <script src="js/app/bootstrap.js"></script>
-  <script src="js/lib/jquery.mobile.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjhxnt9OKjS3g4KcLAL_jMSRNHpolO8Q" async defer></script>
+  
 
   </head>
   <body>
-    
-    <div data-role="page">
 
-    	<div data-role="header">
-    		<h1>Single page</h1>
-    	</div><!-- /header -->
+    	<div class="container">
+        <div class="myHeader">Geolocation Map</div>
+            <button id="geolocation">
+                Get Location
+            </button>
 
-    	<div data-role="content">
-            <p id="geolocation">
-                Finding geolocation....
-            </p>
+            <div id="myMap">
+              
+            </div>
     	</div><!-- /content -->
 
-    	<div data-role="footer">
-    		<h4>Footer content</h4>
-    	</div><!-- /footer -->
+      <div class="container"><!--footer-->
+        <p style="text-align:center; background:#6B8E23; color:white">All Rights Reserved</p>
+      </div>
 
-    </div><!-- /page -->
   </body>
 </html>
