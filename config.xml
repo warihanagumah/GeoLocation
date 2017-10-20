@@ -45,7 +45,7 @@
     <icon src="res/icon/icon.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="res/icon/icon.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="res/icon/icon.png"   gap:platform="android"    gap:qualifier="hdpi" />
-    <icon src="res/icon/icon.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="res/icon/icon.png"   gap:platform="android"    gap:qualifier="xhdpi" />
     <icon src="res/icon/icon.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="res/icon/icon.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="res/icon/icon.png"         gap:platform="ios"        width="114" height="114" />
@@ -75,7 +75,6 @@
 
     <access origin="*"/>
 
-
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
     <plugin name="cordova-plugin-whitelist" version="1" />
@@ -92,5 +91,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <engine name= "android" spec="~5.0.0"/>
 
 </widget>
