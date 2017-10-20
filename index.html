@@ -55,7 +55,12 @@
   <!-- your scripts here -->
   <script src="js/app/app.js"></script>
   <script src="js/app/bootstrap.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjhxnt9OKjS3g4KcLAL_jMSRNHpolO8Q" async defer></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      onDeviceReady();
+    })
+  </script>
   
 
   </head>
@@ -63,8 +68,8 @@
 
     	<div class="container">
         <div class="myHeader">Geolocation Map</div>
-            <button id="geolocation">
-                Get Location
+            <button id="geolocation" onclick="marker()">
+                Pin Location
             </button>
 
             <div id="myMap">
@@ -73,8 +78,9 @@
     	</div><!-- /content -->
 
       <div class="container"><!--footer-->
-        <p style="text-align:center; background:#A52A2A; color:white">All Rights Reserved</p>
+        <p style="text-align:center; background:#A52A2A; color:white">copyright @ 2017</p>
       </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjhxnt9OKjS3g4KcLAL_jMSRNHpolO8Q" async defer></script>
 
   </body>
 </html>
